@@ -216,7 +216,7 @@ Uncomment to run scenario 3 ...
 
 def create_example_4():
     """
-    Example 4: 'Droplist doesn't mention file'.
+    Scenario 4: 'Droplist doesn't mention file'.
     File in originals, droplist exists but doesn't mention this file = in finals
     """
     scenario_name = "example_4_droplist_nomatch"
@@ -252,3 +252,94 @@ def create_example_4():
 Uncomment to run scenario 4 ...
 """
 # create_example_4() 
+
+
+# Generate all 4 priority examples
+if __name__ == "__main__":
+    print("=" * 60)
+    print("GENERATING PRIORITY 1 TEST SCENARIOS")
+    print("=" * 60)
+    
+    create_example_1()
+    create_example_2()
+    create_example_3()
+    create_example_4()
+    
+    print("=" * 60)
+    print("All scenarios created! Run each one and check finals folder.")
+    print("=" * 60)
+
+
+    def create_example_5():
+    """
+    Scenario 5 (Priority 2.1): 'Multiple files - mixed scenario'.
+    Tests all different combinations at once
+    """
+    scenario_name = "example_5_mixed_scenario"
+    base_dir = f"test_{scenario_name}"
+    
+    # Create folder structure
+    os.makedirs(base_dir, exist_ok=True)
+    os.makedirs(os.path.join(base_dir, "originals"), exist_ok=True)
+    os.makedirs(os.path.join(base_dir, "updates"), exist_ok=True)
+    
+    print(f"\n=== Example 5: Mixed scenario with multiple files ===")
+    
+    # Generate surnames for different scenarios
+    surname_originals_only = fake.last_name()      # Only in originals
+    surname_updates_only = fake.last_name()        # Only in updates
+    surname_both = fake.last_name()                # In both folders
+    surname_allowed = fake.last_name()             # In originals + allowlist
+    surname_not_allowed = fake.last_name()         # In originals but NOT in allowlist
+    
+    print(f"Surnames:")
+    print(f"  - {surname_originals_only}: Only in originals (NOT in allowlist)")
+    print(f"  - {surname_updates_only}: Only in updates")
+    print(f"  - {surname_both}: In BOTH originals and updates")
+    print(f"  - {surname_allowed}: In originals + in allowlist")
+    print(f"  - {surname_not_allowed}: In originals but NOT in allowlist")
+    
+    originals_path = os.path.join(base_dir, "originals")
+    updates_path = os.path.join(base_dir, "updates")
+    
+    # Create files in originals
+    create_document(originals_path, surname_originals_only)
+    create_document(originals_path, surname_both)
+    create_document(originals_path, surname_allowed)
+    create_document(originals_path, surname_not_allowed)
+    
+    # Create files in updates
+    create_document(updates_path, surname_updates_only)
+    create_document(updates_path, surname_both)  # Same surname as in originals
+    
+    # Create allowlist
+    allowlist_path = os.path.join(base_dir, "allowlist")
+    with open(allowlist_path, 'w') as file:
+        file.write(f"{surname_allowed}\n{surname_both}")  # List two surnames
+    
+    print(f"\nAllowlist contains: {surname_allowed}, {surname_both}")
+    print(f"\nEXPECTED in finals:")
+    print(f"  ✓ {surname_updates_only} (from updates)")
+    print(f"  ✓ {surname_both} (from updates, supersedes originals)")
+    print(f"  ✓ {surname_allowed} (from originals via allowlist)")
+    print(f"\nEXPECTED NOT in finals:")
+    print(f"  ✗ {surname_originals_only} (not in allowlist)")
+    print(f"  ✗ {surname_not_allowed} (not in allowlist)")
+    print(f"\nRun with: python document_updater.py {base_dir}\n")
+
+# Generate all scenarios (1-5)
+    if __name__ == "__main__":
+    print("=" * 60)
+    print("GENERATING TEST SCENARIOS")
+    print("=" * 60)
+    
+    create_example_1()
+    create_example_2()
+    create_example_3()
+    create_example_4()
+    create_example_5()
+    
+    print("=" * 60)
+    print("SCRIPTED TESTS COMPLETE!")
+    print("For remaining tests (2.2, 2.3, 3.x), use manual testing")
+    print("=" * 60)
