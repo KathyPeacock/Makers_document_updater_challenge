@@ -13,21 +13,29 @@ def create_document(folder_path, surname):
     folder_path: where to create the file (e.g., "originals" folder)
     surname: the filename to use
     """
+    # Seed Faker based on surname so same surname = same first name
+    Faker.seed(hash(surname))
 
-    # Generate a UK name and address
+    # Generate a first name (will be consistent for same surname)
+    # ... and join to make full name
     first_name = fake.first_name()
     full_name = f"{first_name} {surname}"
+
+    # Reset seed with folder name so addresses differ between originals/updates
+    Faker.seed(hash(surname + folder_path))
+
+    # Generate UK address (will be different for different folders)
     street = fake.street_address()
     city = fake.city()
     postcode = fake.postcode()
     
-    # Combine into address format
+    # Combine into name and address format
     address_content = f"{full_name}\n{street}\n{city}\n{postcode}"
 
-    # Create the file path
+    # Create the full file path
     file_path = os.path.join(folder_path, surname)
 
-    # Write the address to the file
+    # Write the name and address to the file
     with open(file_path, 'w') as file:
         file.write(address_content)
     
