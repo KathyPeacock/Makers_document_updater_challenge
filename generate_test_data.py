@@ -24,12 +24,14 @@ def create_document(folder_path, surname):
     # Reset seed with folder name so addresses differ between originals/updates
     Faker.seed(hash(surname + folder_path))
 
-    # Generate UK address (will be different for different folders)
-    street = fake.street_address()
+    # Generate UK address with consistent single-line street address
+    building_number = fake.building_number()
+    street_name = fake.street_name()
+    street = f"{building_number} {street_name}"
     city = fake.city()
     postcode = fake.postcode()
     
-    # Combine into name and address format
+    # Combine into consistent 4 line format: Name, Street, City, Postcode
     address_content = f"{full_name}\n{street}\n{city}\n{postcode}"
 
     # Create the full file path
