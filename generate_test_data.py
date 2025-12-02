@@ -92,4 +92,38 @@ def create_test_scenario(scenario_name):
     print(f"\n✓ Test scenario ready: {base_dir}")
 
     # Quick test of create_test_scenario function
-create_test_scenario("my_first_test")
+# create_test_scenario("my_first_test")
+
+
+def create_example_1():
+    """
+    Scenario 1: 'Droplist blocks originals'. File in originals + in droplist = NOT in finals
+    """
+    scenario_name = "example_1_droplist_blocks_originals"
+    base_dir = f"test_{scenario_name}"
+    
+    # Create folder structure
+    os.makedirs(base_dir, exist_ok=True)
+    os.makedirs(os.path.join(base_dir, "originals"), exist_ok=True)
+    os.makedirs(os.path.join(base_dir, "updates"), exist_ok=True)
+    
+    print(f"\n=== Example 1: Droplist blocks originals ===")
+    
+    # Generate a surname
+    surname = fake.last_name()
+    print(f"Using surname: {surname}")
+    
+    # Create file in originals only
+    originals_path = os.path.join(base_dir, "originals")
+    create_document(originals_path, surname)
+    
+    # Create droplist that mentions this surname
+    droplist_path = os.path.join(base_dir, "droplist")
+    with open(droplist_path, 'w') as file:
+        file.write(surname)
+    
+    print(f"Created droplist containing: {surname}")
+    print(f"EXPECTED: {surname} should NOT appear in finals")
+    print(f"Run with: python document_updater.py {base_dir}\n")
+
+create_example_1()
