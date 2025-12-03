@@ -8,7 +8,7 @@ This early testing phase has identified 5 significant issues that need to be add
 
 ## Bug Report #1: System Cannot Handle Multiple People with Same Surname/Same filename
 
-**Severity:** CRITICAL q
+**Severity:** CRITICAL
 **Priority:** CRITICAL
 
 ### Summary
