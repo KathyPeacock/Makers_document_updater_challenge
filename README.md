@@ -8,6 +8,7 @@ This challenge involved testing a Python document management program that proces
 - `bug_reports.md` = 5 bug reports with comprehensive reproduction steps
 - multiple Test data generation scripts using Faker (preparing for automated, manual and hybrid testing)
 - Process documentation including brief planning of important scenarios to cover, product decision-flow map, test notes and screenshot evidence.
+- `document_updater.py` = program being tested (+ data example provided)
 
 ---
 
@@ -51,7 +52,7 @@ NB: it may be a side-effect of my ADHD, but I certainly found devoting more time
 My edge cases balanced automation with manual exploratory testing and ad-hoc manual data creation. Manual worked best with these very specific edge cases where lots of data was not the priority, just specificity. Also, once a few special characters were tested, for example, with limited time to test it was prudent to avoid as much equivalence testing as possible.
 
 
-## Testing Techniques Demonstrated include:**
+## Testing Techniques Demonstrated include...
 - Decision path testing (each branch of logic tree)
 - Equivalence partitioning (files in originals only, updates only, both)
 - Exploratory testing (edge cases like apostrophes in surnames, and ad hoc ideas)
@@ -61,14 +62,14 @@ My edge cases balanced automation with manual exploratory testing and ad-hoc man
 - Communication with awareness of developer and stakeholder contexts
 
 
-## Technical Skills Demonstrated include:
-
+## Technical Skills Demonstrated include...
 **Python & Faker:**
 - Locale-specific data generation (`en_UK`)
 - Using `seed()` for reproducible varied data
 - Combining Faker methods for custom formats
 - File and directory management with `os` module
-- Git version control
+
+**Git version control**
 
 
 ## Reflection & Learning
@@ -87,7 +88,7 @@ My edge cases balanced automation with manual exploratory testing and ad-hoc man
 
 ---
 
-## Conclusion
+## ... to conclude!
 
 This challenge demonstrated systematic testing process, varied use of automation, and professional communication skills. The focus on understanding requirements first, combined with hybrid testing approaches, led to discovery of both surface bugs and fundamental design issues. I've become far more confident (and creative) with automating test data, and the documentation is tailored as real-world early feedback to a development team as well as stakeholders.
 
