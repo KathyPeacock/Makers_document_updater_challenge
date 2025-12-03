@@ -6,7 +6,6 @@ from faker import Faker
 fake = Faker('en_UK')
 
 def create_document(folder_path, surname):
-
     """
     Creates a document file with UK address inside it
     
@@ -48,7 +47,6 @@ def create_document(folder_path, surname):
 # create_document("test_folder", "TestSurname")
 
 def create_test_scenario(scenario_name):
-    
     """
     Creates a complete test scenario with:
     - originals folder with some documents
@@ -127,9 +125,7 @@ def create_example_1():
     print(f"Run with: python document_updater.py {base_dir}\n")
 
 
-"""
-Uncomment to run scenario 1 ...
-"""
+# Uncomment to run scenario 1 ...
 # create_example_1()
 
 
@@ -169,9 +165,7 @@ def create_example_2():
     print(f"Run with: python document_updater.py {base_dir}\n")
 
 
-"""
-Uncomment to run scenario 2 ...
-"""
+# Uncomment to run scenario 2 ...
 # create_example_2()
 
 
@@ -208,9 +202,7 @@ def create_example_3():
     print(f"Run with: python document_updater.py {base_dir}\n")
 
 
-"""
-Uncomment to run scenario 3 ...
-"""
+# Uncomment to run scenario 3 ...
 # create_example_3()  
 
 
@@ -248,9 +240,7 @@ def create_example_4():
     print(f"Run with: python document_updater.py {base_dir}\n")
 
 
-"""
-Uncomment to run scenario 4 ...
-"""
+# Uncomment to run scenario 4 ...
 # create_example_4() 
 
 
@@ -271,10 +261,10 @@ if __name__ == "__main__":
 
 
     def create_example_5():
-    """
-    Scenario 5 (Priority 2.1): 'Multiple files - mixed scenario'.
-    Tests all different combinations at once
-    """
+        """
+        Scenario 5 (Priority 2.1): 'Multiple files - mixed scenario'.
+        Tests all different combinations at once
+        """
     scenario_name = "example_5_mixed_scenario"
     base_dir = f"test_{scenario_name}"
     
@@ -328,7 +318,7 @@ if __name__ == "__main__":
     print(f"\nRun with: python document_updater.py {base_dir}\n")
 
 # Generate all scenarios (1-5)
-    if __name__ == "__main__":
+if __name__ == "__main__":
     print("=" * 60)
     print("GENERATING TEST SCENARIOS")
     print("=" * 60)
@@ -340,6 +330,5 @@ if __name__ == "__main__":
     create_example_5()
     
     print("=" * 60)
-    print("SCRIPTED TESTS COMPLETE!")
-    print("For remaining tests (2.2, 2.3, 3.x), use manual testing")
+    print("Scenarios 1 - 5 set up :)")
     print("=" * 60)
