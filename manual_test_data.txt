@@ -1,0 +1,34 @@
+MANUAL TEST DATA
+============================================================
+
+Random UK Surnames (for filenames):
+Cunningham
+Todd
+Martin
+Dyer
+Summers
+
+Sample UK Addresses (for document content):
+
+Gillian Cunningham
+07 Tina plains
+Jamesburgh
+SL50 2UH
+
+Vincent Todd
+772 Reid rapids
+Shepherdshire
+L5K 1WJ
+
+Caroline Martin
+33 Leon lights
+Lake Jill
+W2 5JD
+
+Edge Case Surnames:
+Smith
+smith
+O'Brien
+Smith-Jones
+
+============================================================
