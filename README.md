@@ -18,7 +18,7 @@ This challenge involved testing a Python document management program that proces
 
 Rather than diving straight into execution, I began by thoroughly analyzing the program requirements. The description was complex with multiple conditional paths, so I created a visual decision tree in Excalidraw to map out the logic. I wish I'd done this earlier, as I spent quite a while trying to wrap my head around it from the 'spec' description.
 
-The diagram actually became my testing touchstone. As this was done across 2 working days and was a complex scenario, I found that even with my clear planning notes with expectations listed, I had to constantly refer back to make sure I was understanding the product expectations properly.
+The diagram actually became my testing touchstone. As this was done across 2 working days and was a complex scenario, I found that even with my clear planning notes with expectations listed, I had to constantly refer back to make sure I was understanding the product expectations properly. It would have been great if I'd done a formal Decision Table too, to explicitly lay out possible permutations of scenarios.
 
 ### 2. Test Data Generation
 
@@ -84,7 +84,7 @@ My edge cases balanced automation with manual exploratory testing and ad-hoc man
 - Could have discovered the filename issues earlier by testing full names in Priority 1
 - Spent over 2-hour testing limit (good learning about time boxing). Too much fun being had! (Plus inexperience with manual testing time requirements and VS code direcory structure quirks)
 - Could have added assertions to my automated test generations for further efficiency and accuracy, now I've discovered how much printing with dynamic data specific to each method-call helps my organisation!
-- With more time I would have liked to have less equivalence and more coverage on the 'basic' tests before diving into edge cases. I didn't test with large numbers of files, or do as much as I'd have liked with the address data (such as different formats, and combing through the data accuracy in finals etc).
+- With more time I would have liked to have less equivalence and more coverage on the 'basic' tests before diving into edge cases. I didn't test with large numbers of files, or do as much as I'd have liked with the address data (such as different formats, and combing through the data accuracy in finals). This would also be an opportunity for White Box testing of the program code - boundary analysis and expectations for 'correctly formatted' addresses etc.
 - The time spent creating the decision tree diagram proved invaluable throughout testing - I'd prioritise this before any test planning, and really comb through the spec, being more confident to have an 'off the record' play with functionality to inform my test planning.
 
 ---
