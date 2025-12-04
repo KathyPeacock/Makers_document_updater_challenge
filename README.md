@@ -84,6 +84,7 @@ My edge cases balanced automation with manual exploratory testing and ad-hoc man
 - Could have discovered the filename issues earlier by testing full names in Priority 1
 - Spent over 2-hour testing limit (good learning about time boxing). Too much fun being had! (Plus inexperience with manual testing time requirements and VS code direcory structure quirks)
 - Could have added assertions to my automated test generations for further efficiency and accuracy, now I've discovered how much printing with dynamic data specific to each method-call helps my organisation!
+- With more time I would have liked to have less equivalence and more coverage on the 'basic' tests before diving into edge cases. I didn't test with large numbers of files, or do as much as I'd have liked with the address data (such as different formats, and combing through the data accuracy in finals etc).
 - The time spent creating the decision tree diagram proved invaluable throughout testing - I'd prioritise this before any test planning, and really comb through the spec, being more confident to have an 'off the record' play with functionality to inform my test planning.
 
 ---
